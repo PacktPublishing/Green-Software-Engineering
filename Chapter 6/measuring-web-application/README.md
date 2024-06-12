@@ -24,13 +24,7 @@ For this example, we will analyze the New York Times website (nytimes.com).
 
 ## Prerequisites
 
-1. **Python Environment:**
-   Ensure a functioning Python environment is set up with version 3.9.16 or above. You can download it from the [official Python website](https://www.python.org/downloads/).
-
-2. **Node.js Environment:**
-   Ensure a functioning Node.js environment is set up with version 14.0.0 or above. You can download it from the [official Node.js website](https://nodejs.org/en/download).
-
-3. **Containerization Software:**
+1. **Containerization Software:**
    Installation of containerization software is required, such as Docker or Rancher, to manage and run containerized applications.
    - [Docker](https://www.docker.com/products/docker-desktop/)
    - [Rancher](https://www.rancher.com/)
