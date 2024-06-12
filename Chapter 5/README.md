@@ -20,6 +20,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+### README.md
+
+# Fibonacci Algorithm Energy Efficiency
+
+This project explores the energy consumption and execution time of two implementations of the Fibonacci sequence: recursive and iterative. The CodeCarbon library is utilized to measure the environmental impact and performance of each method.
+
+By selecting a method, the code will run the chosen Fibonacci algorithm, measuring both the energy usage and the execution time. This allows for a comparison of the efficiency and environmental impact of the two approaches.
+
 ## Prerequisites
 
 - Ensure you have Python 3.9.16 or above installed. You can download it from the [official Python website](https://www.python.org/downloads/).
