@@ -1,0 +1,26 @@
+# Directories
+node_modules/
+dist/
+coverage/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Compiled output
+*.map
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
