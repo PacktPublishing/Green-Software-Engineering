@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  gse-api:
+    container_name: gse-api
+    build: .
+    ports:
+      - 3000:3000 # Map host port 3000 to container port 3000

@@ -1,0 +1,24 @@
+---
+name: API usage scenario
+author: Santiago Fontanarrosa <sfontanarrosa@gmail.com>
+description: A node.js express API request test
+
+compose-file: !include Compose.yml
+
+services:
+  gse-api:
+    log-stdout: True
+    read-sci-stdout: True
+
+flow:
+  
+  - name: API paginated data
+    container: gse-api
+    commands:
+    - type: console
+      note: PI request paginated 
+      command: for i in {1..10}; do curl -s "http://gse-api:3000/data/paginated?page=1&limit=10" | jq -r '.items[].imageUrl' | while read imageUrl; do curl -O "$imageUrl"; done; done
+      shell: bash
+      log-stdout: True
+      log-stderr: True
+      read-sci-stdout: True

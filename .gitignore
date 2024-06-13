@@ -10,9 +10,6 @@ logs
 # Environment variables
 .env
 
-# Dependency lock files
-package-lock.json
-yarn.lock
 
 # IDE specific files
 .vscode/
@@ -24,3 +21,4 @@ yarn.lock
 # Miscellaneous
 .DS_Store
 Thumbs.db
+green-metrics-tool
