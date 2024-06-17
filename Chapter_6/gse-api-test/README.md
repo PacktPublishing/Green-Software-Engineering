@@ -59,3 +59,15 @@ For this example, we will analyze the New York Times website (nytimes.com).
    sitespeed-result/www.nytimes.com/<current date>/
    ```
 
+git clone 
+run script
+python venv!
+
+
+python3 runner.py --uri ../ --name gsi-api-test --docker-prune --allow-unsafe
+
+
+installed
+git clone https://github.com/green-coding-solutions/green-metrics-tool.git --branch v0.24
+
+python3 runner.py --uri <full path to folder where the usage_scenario.yml file is> --name gse-api-test --docker-prune --allow-unsafe
