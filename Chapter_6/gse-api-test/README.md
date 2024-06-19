@@ -16,11 +16,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Measuring Web Application Sustainability
 
-This example uses [sitespeed.io](https://www.sitespeed.io/), a sophisticated performance monitoring tool integral to refining our web development practices.
-
-Sitespeed.io features several modules, each designed to evaluate different aspects of web applications. In this book, we concentrate on the sustainability module, which employs the Sustainable Web Design (SWD) model to assess the CO2 emissions of web applications.
-
-For this example, we will analyze the New York Times website (nytimes.com).
+This example uses [The Green Metrics Tool (GMT)](https://github.com/green-coding-solutions/green-metrics-tool), an open-source software solution designed to measure the energy consumption and CO2 emissions of software applications.
 
 ## Prerequisites
 
@@ -35,39 +31,39 @@ For this example, we will analyze the New York Times website (nytimes.com).
    - [Docker](https://www.docker.com/products/docker-desktop/)
    - [Rancher](https://www.rancher.com/)
 
+4. **Green Mterics Tool** 
+   For this examples, we tested with version 0.24 of the tool. It is important to note that the installation should not be done within the gse-api-test directory.
+   - [GMT](https://docs.green-coding.io/docs/prologue/introduction/)
+
+## Installation
+
+1. Install GGTM:
+
+   - Installation on Linux → https://docs.green-coding.io/docs/installation/installation-linux/
+   - Installation on macOS → https://docs.green-coding.io/docs/installation/installation-macos/
+   - Installation on Windows (WSL) → https://docs.green-coding.io/docs/installation/installation-windows/
+
 ## Usage
 
-1. **Pull the Sitespeed.io Docker Image:**
+1. **Build and Run the GMT Server:**
 
    ```bash
-   docker pull sitespeedio/sitespeed.io
+   cd <gtm-install-folder>/docker
+   docker-compose up --build
    ```
 
-2. **Run the Sustainability Analysis:**
+2. **Execute the Test:**
 
    ```bash
-   docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:latest --sustainable.model=swd --sustainable.disableHosting=true --sustainable.enable --sustainable.pageViews=1000 https://www.nytimes.com/
+   cd <gtm-install-folder>
+   source venv/bin/activate
+   python3 runner.py --uri <full path to gsi-api-test directory> --name gsi-api-test --docker-prune --allow-unsafe
    ```
+3. **Review Results:**
 
-3. **Access the Results:**
-
-   The `-v "$(pwd):/sitespeed.io"` option mounts the current directory (`$(pwd)`) to the `/sitespeed.io` directory in the container. Sitespeed.io will write the output reports to this directory, making them accessible on your host machine.
-
-   Results will be under the folder:
-
-   ```
-   sitespeed-result/www.nytimes.com/<current date>/
-   ```
-
-git clone 
-run script
-python venv!
-
-
-python3 runner.py --uri ../ --name gsi-api-test --docker-prune --allow-unsafe
-
-
-installed
-git clone https://github.com/green-coding-solutions/green-metrics-tool.git --branch v0.24
-
-python3 runner.py --uri <full path to folder where the usage_scenario.yml file is> --name gse-api-test --docker-prune --allow-unsafe
+   Upon successful execution, a message will be displayed in the terminal directing you to a URL where the report can be accessed. This URL is set during the GTM installation process.
+   
+   ````{verbatim}
+   ##########################################################
+   Please access your report on the URL http://metrics.green-coding.internal:9142/stats.html?id=<run id number>
+   ````
