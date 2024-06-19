@@ -1,0 +1,46 @@
+{
+    "utc": true,
+    "browsertime": {
+      "visualElements": true,
+      "iterations": 1,
+      "video": false,
+      "visualMetrics": true,
+      "flushDNS": true,
+      "videoParams": {
+        "thumbsize": 600
+      },
+      "chrome": {
+        "collectConsoleLog": true,
+        "enableTraceScreenshots": true
+      },
+      "firefox": {
+        "bidihar": true,
+        "disableBrowsertimeExtension": true
+       }
+    },
+    "cpu": true,
+    "gzipHAR": true,
+    "html": {
+      "fetchHARFiles": true,
+      "showScript": true
+    },
+    "screenshot": {
+      "type": "jpg"
+    },
+    "slug": "chapter_9_KPI",
+    "copyLatestFilesToBase": true,
+    "copyLatestFilesToBaseGraphiteNamespace": true,
+    "graphite": {
+      "namespace": "sitespeed_io.desktop",
+      "addSlugToKey": true,
+      "host": "localhost",
+      "messages": ["pageSummary", "run"]
+    },
+    "thirdParty": {
+      "cpu": true
+    },
+    "plugins": {
+        "add": ["sustainable"]
+    }
+  }
+  
